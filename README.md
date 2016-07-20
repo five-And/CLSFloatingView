@@ -20,3 +20,17 @@
 ```objc
 [CLSFloatingView show:@"感谢使用，CLSFloatingView" action:@selector(floatingViewOnClick) target:self hudColor:[UIColor colorWithRed:3/255.0 green:111/255.0 blue:116/255.0 alpha:1]];
 ```
+
+##显示文字，点击操作后，通过代码块回调，并支持采用自定义背景色
+```objc
+[CLSFloatingView show:@"感谢使用，CLSFloatingView" hudColor:defHUDColor clickBlock:^(NSString *msg) {
+        NSLog(@"FloatingView:%@ 被点击了",msg);
+    }];
+```
+
+##显示文字，点击操作后，通过代码块回调，但采用默认背景颜色
+```objc
+[CLSFloatingView show:@"感谢使用，CLSFloatingView" clickBlock:^(NSString *msg) {
+        NSLog(@"FloatingView:%@ 被点击了",msg);
+    }];
+```
