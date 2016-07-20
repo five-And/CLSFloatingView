@@ -16,6 +16,7 @@
 #define FloatingViewHUDLabelMarginLeft 10
 #define FloatingViewHUDLabelMarginTop 20
 #define FloatingViewHUDLabelHeight 44
+#define FloatingViewHUDLabelTextSize 15.0
 
 @implementation CLSFloatingView
 
@@ -140,7 +141,7 @@ static FloatingViewUnClickBlock unClickBlock_;
     }];
 }
 
-
+#pragma mark -私有方法
 /**
  *  设置window
  */
@@ -169,7 +170,7 @@ static FloatingViewUnClickBlock unClickBlock_;
     }];
     
     //启动定时器
-    timer_ = [NSTimer scheduledTimerWithTimeInterval:FloatingViewHUDTimerInterval target:self selector:@selector(dismiss) userInfo:nil repeats:nil];
+    timer_ = [NSTimer scheduledTimerWithTimeInterval:FloatingViewHUDTimerInterval target:self selector:@selector(dismiss) userInfo:nil repeats:NO];
     
 }
 
@@ -181,7 +182,7 @@ static FloatingViewUnClickBlock unClickBlock_;
 +(void)setupLabel:(NSString *)msg{
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(FloatingViewHUDLabelMarginLeft, FloatingViewHUDLabelMarginTop, FloatingViewHUDScreenWidth-2*FloatingViewHUDLabelMarginLeft, FloatingViewHUDLabelHeight)];
     label.textColor = [UIColor whiteColor];
-    label.font = [UIFont systemFontOfSize:14.0];
+    label.font = [UIFont systemFontOfSize:FloatingViewHUDLabelTextSize];
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;
     label.text = msg;
