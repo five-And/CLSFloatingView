@@ -38,6 +38,18 @@
     [CLSFloatingView show:@"感谢使用，CLSFloatingView" action:@selector(floatingViewOnClick) target:self hudColor:defHUDColor];
 }
 
+- (IBAction)showHudStyle5:(id)sender {
+    [CLSFloatingView show:@"感谢使用，CLSFloatingView" hudColor:defHUDColor clickBlock:^(NSString *msg) {
+        NSLog(@"FloatingView:%@ 被点击了",msg);
+    }];
+}
+
+- (IBAction)showHudStyle6:(id)sender {
+    [CLSFloatingView show:@"感谢使用，CLSFloatingView" clickBlock:^(NSString *msg) {
+        NSLog(@"FloatingView:%@ 被点击了",msg);
+    }];
+}
+
 - (IBAction)dismissHUD:(id)sender {
     [CLSFloatingView dismiss];
 }

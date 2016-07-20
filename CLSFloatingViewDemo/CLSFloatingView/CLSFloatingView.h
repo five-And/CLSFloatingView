@@ -10,6 +10,9 @@
 
 @interface CLSFloatingView : NSObject
 
+//floatview点击代码块
+typedef  void (^FloatingViewClickBlock)(NSString *msg);
+
 /**
  *  显示消息
  *
@@ -21,7 +24,7 @@
  *  显示消息
  *
  *  @param msg   消息内容
- *  @param color hud的背景颜色
+ *  @param color 消息视图的的背景颜色
  */
 +(void)show:(NSString *)msg hudColor:(UIColor *)color;
 
@@ -40,9 +43,26 @@
  *  @param msg    消息内容
  *  @param action 点击消息后的操作
  *  @param target 点击操作所属的对象
- *  @param color  hud的背景颜色
+ *  @param color  消息视图的的背景颜色
  */
 +(void)show:(NSString *)msg action:(SEL) action target:(id)target hudColor:(UIColor *)color;
+
+/**
+ *  显示消息
+ *
+ *  @param msg        消息内容
+ *  @param color      消息视图的的背景颜色
+ *  @param clickBlock 点击操作的代码块
+ */
++(void)show:(NSString *)msg hudColor:(UIColor *)color clickBlock:(FloatingViewClickBlock)clickBlock;
+
+/**
+ *  显示消息
+ *
+ *  @param msg        消息内容
+ *  @param clickBlock 点击操作的代码块
+ */
++(void)show:(NSString *)msg clickBlock:(FloatingViewClickBlock)clickBlock;
 
 /**
  *  取消显示

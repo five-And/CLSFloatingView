@@ -21,6 +21,7 @@
 
 static UIWindow *window_;
 static NSTimer *timer_;
+static FloatingViewClickBlock clickBlock_;
 
 /**
  *  显示消息
@@ -68,6 +69,39 @@ static NSTimer *timer_;
     //设置按钮
     [self setupButton:action target:target];
 }
+
+/**
+ *  显示消息
+ *
+ *  @param msg
+ *  @param color
+ *  @param clickBlock
+ */
++(void)show:(NSString *)msg hudColor:(UIColor *)color clickBlock:(FloatingViewClickBlock)clickBlock{
+    //设置window
+    [self setupWindow:color];
+    //设置标签
+    [self setupLabel:msg];
+    //设置按钮
+    [self setupButtonUseBlock:clickBlock];
+    
+}
+
+/**
+ *  显示消息
+ *
+ *  @param msg        消息内容
+ *  @param clickBlock 点击操作的代码块
+ */
++(void)show:(NSString *)msg clickBlock:(FloatingViewClickBlock)clickBlock{
+    //设置window
+    [self setupWindow:FloatingViewHUDDefBgColor];
+    //设置标签
+    [self setupLabel:msg];
+    //设置按钮
+    [self setupButtonUseBlock:clickBlock];
+}
+
 
 
 /**
@@ -146,5 +180,34 @@ static NSTimer *timer_;
     }
     [window_ addSubview:button];
 }
+
+/**
+ *  设置点击事件
+ *
+ *  @param clickBlock 处理点击事件的block
+ */
++(void)setupButtonUseBlock:(FloatingViewClickBlock)clickBlock{
+    clickBlock_ = clickBlock;
+    UIButton *button =[[UIButton alloc] init];
+    button.frame = window_.bounds;
+    [button.titleLabel setTextColor:[UIColor whiteColor]];
+    [button addTarget:self action:@selector(buttonOnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [window_ addSubview:button];
+}
+
++(void)buttonOnClick:(UIButton *)button{
+    if (clickBlock_) {
+        NSString *msg = @"";
+        for (UIView *eachView in window_.subviews) {
+            if ([eachView isKindOfClass:[UILabel class]]) {
+                UILabel *label = (UILabel *)eachView;
+                msg = label.text;
+                break;
+            }
+        }
+        clickBlock_(msg);
+    }
+}
+
 
 @end
