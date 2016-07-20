@@ -10,8 +10,10 @@
 
 @interface CLSFloatingView : NSObject
 
-//floatview点击代码块
+/** floatview被点击后的代码块 */
 typedef  void (^FloatingViewClickBlock)(NSString *msg);
+/** floatview消失且未点击的代码块 */
+typedef  void (^FloatingViewUnClickBlock)(NSString *msg);
 
 /**
  *  显示消息
@@ -63,6 +65,16 @@ typedef  void (^FloatingViewClickBlock)(NSString *msg);
  *  @param clickBlock 点击操作的代码块
  */
 +(void)show:(NSString *)msg clickBlock:(FloatingViewClickBlock)clickBlock;
+
+/**
+ *  显示消息
+ *
+ *  @param msg          消息内容
+ *  @param color        消息视图的的背景颜色
+ *  @param clickBlock   点击操作的代码块
+ *  @param unClickBlock 当视图消失后，未进行点击的代码块
+ */
++(void)show:(NSString *)msg hudColor:(UIColor *)color clickBlock:(FloatingViewClickBlock)clickBlock unClickBlock:(FloatingViewUnClickBlock)unClickBlock;
 
 /**
  *  取消显示

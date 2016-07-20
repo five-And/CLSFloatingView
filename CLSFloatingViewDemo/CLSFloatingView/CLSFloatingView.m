@@ -22,6 +22,7 @@
 static UIWindow *window_;
 static NSTimer *timer_;
 static FloatingViewClickBlock clickBlock_;
+static FloatingViewUnClickBlock unClickBlock_;
 
 /**
  *  显示消息
@@ -83,8 +84,25 @@ static FloatingViewClickBlock clickBlock_;
     //设置标签
     [self setupLabel:msg];
     //设置按钮
-    [self setupButtonUseBlock:clickBlock];
+    [self setupButtonUseBlock:clickBlock unClickBlock:nil];
     
+}
+
+/**
+ *  显示消息
+ *
+ *  @param msg          消息内容
+ *  @param color        消息视图的的背景颜色
+ *  @param clickBlock   点击操作的代码块
+ *  @param unClickBlock 当视图消失后，未进行点击的代码块
+ */
++(void)show:(NSString *)msg hudColor:(UIColor *)color clickBlock:(FloatingViewClickBlock)clickBlock unClickBlock:(FloatingViewUnClickBlock)unClickBlock{
+    //设置window
+    [self setupWindow:color];
+    //设置标签
+    [self setupLabel:msg];
+    //设置按钮
+    [self setupButtonUseBlock:clickBlock unClickBlock:unClickBlock];
 }
 
 /**
@@ -99,7 +117,7 @@ static FloatingViewClickBlock clickBlock_;
     //设置标签
     [self setupLabel:msg];
     //设置按钮
-    [self setupButtonUseBlock:clickBlock];
+    [self setupButtonUseBlock:clickBlock unClickBlock:nil];
 }
 
 
@@ -114,6 +132,10 @@ static FloatingViewClickBlock clickBlock_;
         frame.origin.y = -FloatingViewHUDWindowHeight;
         window_.frame = frame;
     } completion:^(BOOL finished) {
+        if (unClickBlock_) {
+            NSString *msg = [self getFloatViewMsg];
+            unClickBlock_(msg);
+        }
         window_ = nil;
     }];
 }
@@ -186,8 +208,9 @@ static FloatingViewClickBlock clickBlock_;
  *
  *  @param clickBlock 处理点击事件的block
  */
-+(void)setupButtonUseBlock:(FloatingViewClickBlock)clickBlock{
++(void)setupButtonUseBlock:(FloatingViewClickBlock)clickBlock unClickBlock:(FloatingViewUnClickBlock)unClickBlock{
     clickBlock_ = clickBlock;
+    unClickBlock_ = unClickBlock;
     UIButton *button =[[UIButton alloc] init];
     button.frame = window_.bounds;
     [button.titleLabel setTextColor:[UIColor whiteColor]];
@@ -197,16 +220,24 @@ static FloatingViewClickBlock clickBlock_;
 
 +(void)buttonOnClick:(UIButton *)button{
     if (clickBlock_) {
-        NSString *msg = @"";
-        for (UIView *eachView in window_.subviews) {
-            if ([eachView isKindOfClass:[UILabel class]]) {
-                UILabel *label = (UILabel *)eachView;
-                msg = label.text;
-                break;
-            }
-        }
+        unClickBlock_ = nil;
+        NSString *msg = [self getFloatViewMsg];
         clickBlock_(msg);
+        [self dismiss];
     }
+}
+
++(NSString *)getFloatViewMsg{
+    NSString *msg = @"";
+    for (UIView *eachView in window_.subviews) {
+        if ([eachView isKindOfClass:[UILabel class]]) {
+            UILabel *label = (UILabel *)eachView;
+            msg = label.text;
+            break;
+        }
+    }
+    return msg;
+
 }
 
 

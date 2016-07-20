@@ -50,6 +50,17 @@
     }];
 }
 
+- (IBAction)showHudStyle7:(id)sender {
+    [CLSFloatingView show:@"感谢使用，CLSFloatingView"
+                 hudColor:defHUDColor
+               clickBlock:^(NSString *msg) {
+                   NSLog(@"FloatingView:%@ 被点击了",msg);
+               }
+             unClickBlock:^(NSString *msg) {
+                 NSLog(@"FloatingView:%@ 消失了",msg);
+             }];
+}
+
 - (IBAction)dismissHUD:(id)sender {
     [CLSFloatingView dismiss];
 }

@@ -17,50 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-6H-jjz">
-                                <rect key="frame" x="20" y="148" width="127" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-6H-jjz">
+                                <rect key="frame" x="10" y="148" width="580" height="30"/>
                                 <state key="normal" title="显示hud(支持点击)"/>
                                 <connections>
                                     <action selector="showHudStyle3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2F-Ni-Jd9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-HM-6L7">
-                                <rect key="frame" x="20" y="186" width="232" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-HM-6L7">
+                                <rect key="frame" x="10" y="186" width="580" height="30"/>
                                 <state key="normal" title="显示hud(支持点击，自定义背景色)"/>
                                 <connections>
                                     <action selector="showHudStyle4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l1a-8e-JeN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWg-rk-Eww">
-                                <rect key="frame" x="20" y="72" width="142" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWg-rk-Eww">
+                                <rect key="frame" x="10" y="72" width="580" height="30"/>
                                 <state key="normal" title="显示hud(默认背景色)"/>
                                 <connections>
                                     <action selector="showHudStyle1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wbg-oP-kYY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtc-eo-h9y">
-                                <rect key="frame" x="20" y="110" width="157" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtc-eo-h9y">
+                                <rect key="frame" x="10" y="110" width="580" height="30"/>
                                 <state key="normal" title="显示hud(自定义背景色)"/>
                                 <connections>
                                     <action selector="showHudStyle2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lp9-29-rPT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJf-e6-8i6">
-                                <rect key="frame" x="20" y="224" width="299" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJf-e6-8i6">
+                                <rect key="frame" x="10" y="224" width="580" height="30"/>
                                 <state key="normal" title="显示hud(使用block支持点击，自定义背景色)"/>
                                 <connections>
                                     <action selector="showHudStyle5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="piL-lt-ukj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-o5-0ex">
-                                <rect key="frame" x="20" y="262" width="284" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-o5-0ex">
+                                <rect key="frame" x="10" y="262" width="580" height="30"/>
                                 <state key="normal" title="显示hud(使用block支持点击，默认背景色)"/>
                                 <connections>
                                     <action selector="showHudStyle6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SsR-w7-qOA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-AG-Ags">
-                                <rect key="frame" x="20" y="300" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-uf-yDe">
+                                <rect key="frame" x="10" y="300" width="580" height="30"/>
+                                <state key="normal" title="显示hud(使用block支持点击，支持视图消失后的回调，自定义背景色)"/>
+                                <connections>
+                                    <action selector="showHudStyle7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mFY-ha-SSh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-AG-Ags">
+                                <rect key="frame" x="10" y="338" width="580" height="30"/>
                                 <state key="normal" title="关闭hud"/>
                                 <connections>
                                     <action selector="dismissHUD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nGG-uM-RI1"/>
@@ -68,6 +75,32 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OJf-e6-8i6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="0Ys-I0-LgN"/>
+                            <constraint firstItem="Mtc-eo-h9y" firstAttribute="top" secondItem="nWg-rk-Eww" secondAttribute="bottom" constant="8" id="4T8-aR-0GC"/>
+                            <constraint firstAttribute="trailing" secondItem="3eg-AG-Ags" secondAttribute="trailing" constant="10" id="Bqn-Yc-CQ9"/>
+                            <constraint firstItem="aBY-6H-jjz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="CHv-Dg-rTS"/>
+                            <constraint firstItem="Wyh-o5-0ex" firstAttribute="top" secondItem="OJf-e6-8i6" secondAttribute="bottom" constant="8" id="Dto-qh-A3J"/>
+                            <constraint firstItem="TQZ-uf-yDe" firstAttribute="top" secondItem="Wyh-o5-0ex" secondAttribute="bottom" constant="8" id="KAg-Jj-egz"/>
+                            <constraint firstItem="OJf-e6-8i6" firstAttribute="top" secondItem="ofV-HM-6L7" secondAttribute="bottom" constant="8" id="KPD-89-Zzu"/>
+                            <constraint firstItem="Wyh-o5-0ex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="LFJ-m3-0ig"/>
+                            <constraint firstAttribute="trailing" secondItem="nWg-rk-Eww" secondAttribute="trailing" constant="10" id="LnF-Ao-euR"/>
+                            <constraint firstItem="3eg-AG-Ags" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="N3x-fc-1XK"/>
+                            <constraint firstAttribute="trailing" secondItem="Mtc-eo-h9y" secondAttribute="trailing" constant="10" id="QwE-zG-Ymz"/>
+                            <constraint firstAttribute="trailing" secondItem="Wyh-o5-0ex" secondAttribute="trailing" constant="10" id="U58-aO-yOH"/>
+                            <constraint firstAttribute="trailing" secondItem="OJf-e6-8i6" secondAttribute="trailing" constant="10" id="YV0-6K-MeY"/>
+                            <constraint firstAttribute="trailing" secondItem="ofV-HM-6L7" secondAttribute="trailing" constant="10" id="cdI-PS-hp3"/>
+                            <constraint firstAttribute="trailing" secondItem="aBY-6H-jjz" secondAttribute="trailing" constant="10" id="iQw-gy-Vyy"/>
+                            <constraint firstItem="nWg-rk-Eww" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="iW4-pD-Lb2"/>
+                            <constraint firstItem="Mtc-eo-h9y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ifk-Tf-u5u"/>
+                            <constraint firstAttribute="trailing" secondItem="TQZ-uf-yDe" secondAttribute="trailing" constant="10" id="oGM-Qu-wj1"/>
+                            <constraint firstItem="TQZ-uf-yDe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="ong-tp-YV1"/>
+                            <constraint firstItem="3eg-AG-Ags" firstAttribute="top" secondItem="TQZ-uf-yDe" secondAttribute="bottom" constant="8" id="rnO-tI-y8E"/>
+                            <constraint firstItem="ofV-HM-6L7" firstAttribute="top" secondItem="aBY-6H-jjz" secondAttribute="bottom" constant="8" id="t9G-GI-eT7"/>
+                            <constraint firstItem="nWg-rk-Eww" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="td9-bF-Tok"/>
+                            <constraint firstItem="ofV-HM-6L7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="voN-Ke-z7V"/>
+                            <constraint firstItem="aBY-6H-jjz" firstAttribute="top" secondItem="Mtc-eo-h9y" secondAttribute="bottom" constant="8" id="wt4-Ry-JyV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CLSFloatingView" id="cKw-mV-35h"/>
                 </viewController>
