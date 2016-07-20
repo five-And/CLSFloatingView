@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PW0-0h-kab">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--CLSFloatingView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-6H-jjz">
+                                <rect key="frame" x="20" y="148" width="127" height="30"/>
+                                <state key="normal" title="显示hud(支持点击)"/>
+                                <connections>
+                                    <action selector="showHudStyle3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2F-Ni-Jd9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofV-HM-6L7">
+                                <rect key="frame" x="20" y="186" width="232" height="30"/>
+                                <state key="normal" title="显示hud(支持点击，自定义背景色)"/>
+                                <connections>
+                                    <action selector="showHudStyle4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l1a-8e-JeN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-AG-Ags">
+                                <rect key="frame" x="20" y="224" width="57" height="30"/>
+                                <state key="normal" title="关闭hud"/>
+                                <connections>
+                                    <action selector="dismissHUD:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nGG-uM-RI1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWg-rk-Eww">
+                                <rect key="frame" x="20" y="72" width="142" height="30"/>
+                                <state key="normal" title="显示hud(默认背景色)"/>
+                                <connections>
+                                    <action selector="showHudStyle1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wbg-oP-kYY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtc-eo-h9y">
+                                <rect key="frame" x="20" y="110" width="157" height="30"/>
+                                <state key="normal" title="显示hud(自定义背景色)"/>
+                                <connections>
+                                    <action selector="showHudStyle2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lp9-29-rPT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CLSFloatingView" id="cKw-mV-35h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="180"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="U0Y-Zu-d0c">
+            <objects>
+                <navigationController id="PW0-0h-kab" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uk2-kL-ifN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4iT-nN-5S1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6a-QF-gGx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615" y="180"/>
+        </scene>
+    </scenes>
+</document>
